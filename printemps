@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu du Code Magique - Printemps</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, #c4f1be, #f9ffe1);
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #2e8b57;
+      margin-bottom: 20px;
+    }
+    input {
+      font-size: 1.2em;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    button {
+      font-size: 1.1em;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #88c793;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #6fa77e;
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 1.5em;
+    }
+    .success {
+      color: #4CAF50;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Jeu du Code Magique 🌸</h1>
+  <p>Devinez le mot magique : 4 lettres et 2 chiffres 🌿</p>
+  <input type="text" id="codeInput" placeholder="Entrez le code ici" />
+  <br>
+  <button onclick="verifierCode()">Valider</button>
+  <div id="resultat" class="message"></div>
+
+  <script>
+    function verifierCode() {
+      const codeCorrect = "APMM21";
+      const codeEntre = document.getElementById("codeInput").value.trim().toUpperCase();
+      const resultat = document.getElementById("resultat");
+
+      if (codeEntre === codeCorrect) {
+        resultat.innerHTML = "🎉 Félicitations ! Vous avez trouvé le code magique du printemps 🌼";
+        resultat.classList.remove("error");
+        resultat.classList.add("success");
+      } else {
+        resultat.innerHTML = "❌ Réessayez encore, ce n'est pas le bon code !";
+        resultat.classList.remove("success");
+        resultat.classList.add("error");
+      }
+    }
+  </script>
+</body>
+</html>
